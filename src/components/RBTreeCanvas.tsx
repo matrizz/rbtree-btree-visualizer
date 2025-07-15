@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { RBNode } from '../../struct/RBTree/classes/RBNode';
 import type { RotationRecord } from '../../struct/RBTree/classes/RBTree';
 
@@ -77,7 +77,7 @@ export default function RBTreeCanvas({ root, path = [], rotation }: Props) {
 
         let startPositions: Record<number, { x: number, y: number }> = {};
         if (animating && rotation) {
-            rotation.nodes.forEach((data, i) => {
+            rotation.nodes.forEach((data) => {
                 if (finalPositions[data]) {
                     startPositions[data] = {
                         x: finalPositions[data].x,
